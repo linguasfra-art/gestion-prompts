@@ -1,0 +1,100 @@
+# ============================================================
+# .gitignore — gestion-prompts
+# Éditeurs, IDE, systèmes d'exploitation, fichiers temporaires
+# ============================================================
+
+# --- Visual Studio Code ---
+.vscode/
+*.code-workspace
+.history/
+
+# --- JetBrains (IntelliJ, PyCharm, WebStorm, etc.) ---
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# --- Sublime Text ---
+*.sublime-project
+*.sublime-workspace
+
+# --- Vim / Neovim ---
+*.swp
+*.swo
+*~
+.netrwhist
+Session.vim
+.neoconf.json
+
+# --- Emacs ---
+*#
+.#*
+\#*\#
+*.elc
+auto-save-list
+tramp
+
+# --- TextMate ---
+*.tmproj
+*.tmproject
+tmtags
+
+# --- Cursor ---
+.cursor/
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Icon
+
+# --- Windows ---
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# --- Linux ---
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# --- Fichiers sensibles (clés API, tokens) ---
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+config.local.*
+
+# --- Fichiers temporaires ---
+*.tmp
+*.temp
+*.bak
+*.orig
+*.log
+
+# --- Node.js (si scripts utilitaires) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Python (si scripts utilitaires) ---
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
