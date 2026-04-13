@@ -1,0 +1,322 @@
+{
+  "meta": {
+    "depot": "gestion-prompts",
+    "description": "Index des prompts AI — templates système/utilisateur avec variables, paramètres modèles et domaines",
+    "url": "https://github.com/linguasfra-art/gestion-prompts",
+    "auteur": "linguasfra-art",
+    "version_index": "1.0",
+    "derniere_mise_a_jour": "2026-04-13",
+    "total_prompts": 4
+  },
+  "prompts": [
+    {
+      "id": "generation-code",
+      "fichier": "prompts/generation-code.md",
+      "url_github": "https://github.com/linguasfra-art/gestion-prompts/blob/main/prompts/generation-code.md",
+      "titre": "Génération de code",
+      "categorie": "code",
+      "version": "1.0",
+      "date": "2026-04-13",
+      "modeles_cibles": ["GPT-4o", "Claude 3.5 Sonnet", "Gemini 1.5 Pro"],
+      "description": "Génère un bloc de code propre, commenté et fonctionnel dans le langage demandé à partir d'une description fonctionnelle en langage naturel.",
+      "domaines": ["développement logiciel", "scripting", "automatisation", "génération de fonctions utilitaires"],
+      "parametres_modele": {
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "top_p": 0.95,
+        "frequency_penalty": 0.0
+      },
+      "variables": [
+        {
+          "nom": "{{langage}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Langage de programmation cible",
+          "exemple": "Python 3.11"
+        },
+        {
+          "nom": "{{description_fonctionnelle}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Ce que doit faire la fonction en langage naturel",
+          "exemple": "lit un fichier CSV et retourne un dictionnaire"
+        },
+        {
+          "nom": "{{style_code}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Convention de style à respecter",
+          "exemple": "PEP 8"
+        },
+        {
+          "nom": "{{gestion_erreurs}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Stratégie de gestion des erreurs",
+          "exemple": "lever des exceptions explicites"
+        },
+        {
+          "nom": "{{contraintes_supplementaires}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Contraintes additionnelles libres",
+          "exemple": "- Sans dépendances externes"
+        }
+      ],
+      "mots_cles": ["code", "programmation", "développement", "fonction", "script", "Python", "JavaScript"]
+    },
+    {
+      "id": "generation-images",
+      "fichier": "prompts/generation-images.md",
+      "url_github": "https://github.com/linguasfra-art/gestion-prompts/blob/main/prompts/generation-images.md",
+      "titre": "Génération d'images",
+      "categorie": "image",
+      "version": "1.0",
+      "date": "2026-04-13",
+      "modeles_cibles": ["DALL·E 3", "Stable Diffusion XL", "Midjourney v6", "Flux"],
+      "description": "Génère un prompt optimisé pour les modèles de création d'images à partir d'une description du sujet, du style artistique et des paramètres visuels souhaités.",
+      "domaines": ["illustration", "direction artistique", "design graphique", "visuels professionnels", "couvertures de documents"],
+      "parametres_modele": {
+        "temperature": 0.8,
+        "max_tokens": 512,
+        "top_p": 1.0
+      },
+      "variables": [
+        {
+          "nom": "{{sujet}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Description du sujet ou de la scène principale",
+          "exemple": "Un port breton au lever du soleil"
+        },
+        {
+          "nom": "{{style_artistique}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Style visuel ou référence artistique",
+          "exemple": "aquarelle impressionniste"
+        },
+        {
+          "nom": "{{ambiance}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Émotion ou atmosphère recherchée",
+          "exemple": "calme, nostalgique, lumière dorée"
+        },
+        {
+          "nom": "{{palette_couleurs}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Couleurs dominantes ou ton général",
+          "exemple": "tons bleus et orangés chauds"
+        },
+        {
+          "nom": "{{composition}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Cadrage, angle, format",
+          "exemple": "grand angle, format 16:9, panorama"
+        },
+        {
+          "nom": "{{modele_cible}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Modèle IA d'image à utiliser",
+          "exemple": "DALL·E 3"
+        },
+        {
+          "nom": "{{elements_negatifs}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Ce que l'image ne doit pas contenir",
+          "exemple": "personnes, texte, logo, flou"
+        }
+      ],
+      "mots_cles": ["image", "illustration", "DALL-E", "Midjourney", "Stable Diffusion", "prompt visuel", "design"]
+    },
+    {
+      "id": "generation-rapports",
+      "fichier": "prompts/generation-rapports.md",
+      "url_github": "https://github.com/linguasfra-art/gestion-prompts/blob/main/prompts/generation-rapports.md",
+      "titre": "Génération de rapports",
+      "categorie": "rapport",
+      "version": "1.0",
+      "date": "2026-04-13",
+      "modeles_cibles": ["GPT-4o", "Claude 3.5 Sonnet", "Gemini 1.5 Pro"],
+      "description": "Génère un rapport structuré, professionnel et complet à partir de données brutes ou d'un contexte fourni. Adapté aux rapports d'analyse, comptes rendus, synthèses et rapports d'activité.",
+      "domaines": ["rédaction professionnelle", "rapports administratifs", "comptes rendus de réunion", "synthèses documentaires", "rapports associatifs"],
+      "parametres_modele": {
+        "temperature": 0.4,
+        "max_tokens": 3000,
+        "top_p": 0.95,
+        "frequency_penalty": 0.3,
+        "presence_penalty": 0.2
+      },
+      "variables": [
+        {
+          "nom": "{{langue_redaction}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Langue du rapport",
+          "exemple": "français"
+        },
+        {
+          "nom": "{{type_rapport}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Nature du rapport",
+          "exemple": "de synthèse"
+        },
+        {
+          "nom": "{{sujet_rapport}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Sujet principal ou titre",
+          "exemple": "Bilan de la session de formation 2025"
+        },
+        {
+          "nom": "{{destinataire}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Destinataire(s) et leur profil",
+          "exemple": "Direction administrative, non-spécialiste"
+        },
+        {
+          "nom": "{{contexte}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Contexte de production du rapport",
+          "exemple": "Suite à 3 sessions de formation menées en janvier 2026"
+        },
+        {
+          "nom": "{{donnees_brutes}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Faits, chiffres, observations à intégrer",
+          "exemple": "- 24 participants\n- Taux de satisfaction : 87 %"
+        },
+        {
+          "nom": "{{structure_souhaitee}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Plan ou sections imposées",
+          "exemple": "1. Résumé exécutif\n2. Constats\n3. Recommandations"
+        },
+        {
+          "nom": "{{longueur_souhaitee}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Longueur cible",
+          "exemple": "2 pages / 600 mots"
+        },
+        {
+          "nom": "{{niveau_langue}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Registre formel ou courant",
+          "exemple": "formel administratif"
+        },
+        {
+          "nom": "{{format_sortie}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Markdown, texte brut, HTML",
+          "exemple": "Markdown avec titres H2/H3"
+        },
+        {
+          "nom": "{{mentions_obligatoires}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Éléments à faire apparaître impérativement",
+          "exemple": "Date, référence dossier, signature"
+        }
+      ],
+      "mots_cles": ["rapport", "rédaction", "synthèse", "compte rendu", "administratif", "professionnel", "formation"]
+    },
+    {
+      "id": "traduction-juridique",
+      "fichier": "prompts/traduction-juridique.md",
+      "url_github": "https://github.com/linguasfra-art/gestion-prompts/blob/main/prompts/traduction-juridique.md",
+      "titre": "Traduction juridique FR / PT / EN",
+      "categorie": "traduction",
+      "version": "1.0",
+      "date": "2026-04-13",
+      "modeles_cibles": ["GPT-4o", "Claude 3.5 Sonnet", "Gemini 1.5 Pro"],
+      "description": "Traduit des documents juridiques et administratifs entre français, portugais (PT-BR / PT-PT) et anglais (EN-GB / EN-US) en respectant terminologie officielle, juridiction et niveau de formalité.",
+      "domaines": ["traduction juridique certifiée", "droit civil", "droit de la famille", "état civil", "diplômes et attestations", "droit commercial", "apostille", "procédure judiciaire"],
+      "parametres_modele": {
+        "temperature": 0.1,
+        "max_tokens": 4096,
+        "top_p": 0.9,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0
+      },
+      "variables": [
+        {
+          "nom": "{{document_type}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Nature juridique du document",
+          "exemple": "jugement de divorce"
+        },
+        {
+          "nom": "{{langue_source}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Langue du document original",
+          "exemple": "français"
+        },
+        {
+          "nom": "{{langue_cible}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Langue de la traduction",
+          "exemple": "portugais brésilien"
+        },
+        {
+          "nom": "{{juridiction}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Juridiction d'origine et de destination",
+          "exemple": "France → Brésil"
+        },
+        {
+          "nom": "{{niveau_formalite}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Registre de langue requis",
+          "exemple": "très formel / acte officiel"
+        },
+        {
+          "nom": "{{terminologie_specifique}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Domaine sectoriel ou glossaire à privilégier",
+          "exemple": "droit de la famille, apostille La Haye"
+        },
+        {
+          "nom": "{{variante_linguistique}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Précision dialectale ou nationale",
+          "exemple": "portugais brésilien (PT-BR)"
+        },
+        {
+          "nom": "{{texte_source}}",
+          "type": "string",
+          "obligatoire": true,
+          "description": "Texte intégral du document à traduire",
+          "exemple": "[coller le document ici]"
+        },
+        {
+          "nom": "{{instructions_supplementaires}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Consignes additionnelles libres",
+          "exemple": "- Préserver les références légales sans traduire les numéros d'articles"
+        }
+      ],
+      "mots_cles": ["traduction", "juridique", "droit", "français", "portugais", "anglais", "PT-BR", "PT-PT", "EN-GB", "apostille", "jugement", "diplôme", "état civil", "certifié"]
+    }
+  ]
+}
