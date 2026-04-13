@@ -4,9 +4,9 @@
     "description": "Index des prompts AI — templates système/utilisateur avec variables, paramètres modèles et domaines",
     "url": "https://github.com/linguasfra-art/gestion-prompts",
     "auteur": "linguasfra-art",
-    "version_index": "1.0",
+    "version_index": "1.1",
     "derniere_mise_a_jour": "2026-04-13",
-    "total_prompts": 4
+    "total_prompts": 5
   },
   "prompts": [
     {
@@ -317,6 +317,75 @@
         }
       ],
       "mots_cles": ["traduction", "juridique", "droit", "français", "portugais", "anglais", "PT-BR", "PT-PT", "EN-GB", "apostille", "jugement", "diplôme", "état civil", "certifié"]
+    },
+    {
+      "id": "president-unetica",
+      "fichier": "prompts/president-unetica.md",
+      "url_github": "https://github.com/linguasfra-art/gestion-prompts/blob/main/prompts/president-unetica.md",
+      "titre": "Président de l'UNETICA — Prompt et gabarits",
+      "categorie": "gouvernance",
+      "version": "1.0",
+      "date": "2026-04-13",
+      "modeles_cibles": ["GPT-4o", "Claude 3.5 Sonnet", "Gemini 1.5 Pro"],
+      "description": "Ensemble de prompts et gabarits pour assister le président de l'UNETICA dans ses communications et actions : gouvernance interne, déontologie, relations avec les autorités judiciaires, communication vers les membres et justiciables.",
+      "domaines": ["gouvernance associative", "communication institutionnelle", "déontologie ETI", "relations autorités judiciaires", "droit des associations", "service public de la justice", "UNETICA"],
+      "modules": [
+        "Module 1 — Gouvernance interne",
+        "Module 2 — Déontologie et manquements (+ gabarit)",
+        "Module 3 — Relations avec les autorités judiciaires (+ gabarit)",
+        "Module 4 — Communication membres / justiciables / médias"
+      ],
+      "parametres_modele": {
+        "temperature": 0.3,
+        "max_tokens": 2048,
+        "top_p": 0.95,
+        "frequency_penalty": 0.2
+      },
+      "variables": [
+        {
+          "nom": "{{tache_gouvernance}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Tâche spécifique — module gouvernance interne",
+          "exemple": "Rédiger le PV du CA du 10 avril 2026"
+        },
+        {
+          "nom": "{{tache_deontologie}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Tâche spécifique — module déontologie et manquements",
+          "exemple": "Analyser le signalement joint en pièce"
+        },
+        {
+          "nom": "{{tache_autorites}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Tâche spécifique — module relations avec les autorités",
+          "exemple": "Préparer un courrier au premier président de la cour d'appel de Toulouse sur les délais de renouvellement des listes"
+        },
+        {
+          "nom": "{{tache_communication}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Tâche spécifique — module communication",
+          "exemple": "Rédiger une FAQ pour les justiciables sur le rôle de l'ETI"
+        },
+        {
+          "nom": "{{destinataire_communication}}",
+          "type": "string",
+          "obligatoire": false,
+          "description": "Destinataire de la communication",
+          "exemple": "justiciables non-spécialistes"
+        }
+      ],
+      "references_legales": [
+        "Loi n° 71-498 du 29 juin 1971 (experts judiciaires)",
+        "Décret n° 2004-1463 du 23 décembre 2004",
+        "Arrêté du 5 décembre 2022 (nomenclature)",
+        "CPP art. D.594-16 s. (désignation des ETI)",
+        "CPP art. R.122 s. (indemnités ETI)"
+      ],
+      "mots_cles": ["UNETICA", "ETI", "expert traducteur", "interprète judiciaire", "président", "gouvernance", "déontologie", "association", "justice", "cour d'appel", "ministère de la Justice", "EULITA", "listes d'experts"]
     }
   ]
 }
