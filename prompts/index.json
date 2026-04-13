@@ -4,9 +4,9 @@
     "description": "Index des prompts AI — templates système/utilisateur avec variables, paramètres modèles et domaines",
     "url": "https://github.com/linguasfra-art/gestion-prompts",
     "auteur": "linguasfra-art",
-    "version_index": "1.1",
+    "version_index": "1.2",
     "derniere_mise_a_jour": "2026-04-13",
-    "total_prompts": 5
+    "total_prompts": 6
   },
   "prompts": [
     {
@@ -386,6 +386,55 @@
         "CPP art. R.122 s. (indemnités ETI)"
       ],
       "mots_cles": ["UNETICA", "ETI", "expert traducteur", "interprète judiciaire", "président", "gouvernance", "déontologie", "association", "justice", "cour d'appel", "ministère de la Justice", "EULITA", "listes d'experts"]
+    },
+    {
+      "id": "pv-convocations-loi1901",
+      "fichier": "prompts/pv-convocations-loi1901.md",
+      "url_github": "https://github.com/linguasfra-art/gestion-prompts/blob/main/prompts/pv-convocations-loi1901.md",
+      "titre": "PV et convocations de réunions — Loi 1901",
+      "categorie": "gouvernance",
+      "version": "1.0",
+      "date": "2026-04-13",
+      "modeles_cibles": ["GPT-4o", "Claude 3.5 Sonnet", "Gemini 1.5 Pro"],
+      "description": "Rédige des convocations et PV conformes à la loi 1901 pour CA, AGO, AGE, groupes de travail et sections locales. Intègre les règles légales (délai 15 jours, quorum, mentions obligatoires, publicité préfectorale).",
+      "domaines": ["gouvernance associative", "procès-verbal", "convocation", "assemblée générale", "conseil d'administration", "loi 1901", "droit des associations"],
+      "types_reunions": [
+        "Conseil d'administration (CA)",
+        "Assemblée générale ordinaire (AGO)",
+        "Assemblée générale extraordinaire (AGE)",
+        "Groupe de travail",
+        "Section locale"
+      ],
+      "cadre_legal": [
+        "Loi du 1er juillet 1901",
+        "Décret du 16 août 1901",
+        "Délai minimal de convocation : 15 jours (jurisprudence)",
+        "Publicité préfectorale obligatoire pour modifications statutaires et changements de dirigeants"
+      ],
+      "parametres_modele": {
+        "temperature": 0.2,
+        "max_tokens": 2048,
+        "top_p": 0.95,
+        "frequency_penalty": 0.1
+      },
+      "variables": [
+        {"nom": "{{type_reunion}}", "type": "string", "obligatoire": true, "description": "Type d'instance et nature de la réunion", "exemple": "Conseil d'administration — réunion ordinaire"},
+        {"nom": "{{nom_association}}", "type": "string", "obligatoire": true, "description": "Dénomination officielle de l'association", "exemple": "UNETICA"},
+        {"nom": "{{siege_social}}", "type": "string", "obligatoire": true, "description": "Adresse complète du siège social", "exemple": "12 rue des Fleurs, 75001 Paris"},
+        {"nom": "{{date_heure_lieu}}", "type": "string", "obligatoire": true, "description": "Date, heure et lieu précis de la réunion", "exemple": "Lundi 20 avril 2026 à 18h00 — salle B, Maison des Associations, Toulouse"},
+        {"nom": "{{ordre_du_jour}}", "type": "string", "obligatoire": true, "description": "Liste numérotée des points à l'ordre du jour", "exemple": "1. Approbation du PV\n2. Bilan financier\n3. Questions diverses"},
+        {"nom": "{{quorum}}", "type": "string", "obligatoire": true, "description": "Règle de quorum applicable et résultat constaté (pour le PV)", "exemple": "Quorum : 1/2 des membres — 8 présents sur 14 → atteint"},
+        {"nom": "{{date_envoi}}", "type": "string", "obligatoire": false, "description": "Date d'envoi prévue de la convocation", "exemple": "3 avril 2026"},
+        {"nom": "{{mode_convocation}}", "type": "string", "obligatoire": false, "description": "Mode d'envoi de la convocation", "exemple": "courrier électronique avec accusé de réception"},
+        {"nom": "{{pieces_jointes}}", "type": "string", "obligatoire": false, "description": "Documents annexés à la convocation", "exemple": "Rapport moral, rapport financier"},
+        {"nom": "{{signataire}}", "type": "string", "obligatoire": true, "description": "Nom et qualité du signataire (convocation)", "exemple": "M. Jean Dupont, Président"},
+        {"nom": "{{president_seance}}", "type": "string", "obligatoire": false, "description": "Identité du président de séance (PV)", "exemple": "M. Jean Dupont, Président"},
+        {"nom": "{{secretaire_seance}}", "type": "string", "obligatoire": false, "description": "Identité du secrétaire de séance (PV)", "exemple": "Mme Marie Martin, Secrétaire générale"},
+        {"nom": "{{membres_presents}}", "type": "string", "obligatoire": false, "description": "Liste des membres présents avec qualité (PV)", "exemple": "Jean Dupont (Président), Marie Martin (Secrétaire)…"},
+        {"nom": "{{debats_decisions}}", "type": "string", "obligatoire": false, "description": "Résumé des échanges et décisions par point (PV)", "exemple": "Point 1 : PV approuvé à l'unanimité…"},
+        {"nom": "{{instructions_supplementaires}}", "type": "string", "obligatoire": false, "description": "Consignes libres additionnelles", "exemple": "- Ajouter les modalités de connexion Zoom"}
+      ],
+      "mots_cles": ["PV", "procès-verbal", "convocation", "assemblée générale", "AGO", "AGE", "conseil d'administration", "CA", "groupe de travail", "section locale", "loi 1901", "quorum", "ordre du jour", "délibération", "préfecture", "statuts"]
     }
   ]
 }
